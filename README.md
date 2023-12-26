@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://i.imgur.com/Ig6J0xo.png" alt="Traffic Examination"/>
+<img src="https://i.imgur.com/JCvB6u1.png" alt="Traffic Examination"/>
 </p>
 
 <h1 align="center">Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
