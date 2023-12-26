@@ -10,9 +10,9 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 >_This tutorial uses materials created in the previous demonstration: [Establishing Virtual Machines With Remote Desktop](https://github.com/Emq17/Establishing-Virtual-Machines-With-Remote-Desktop)_
 <h2>Environments and Technologies</h2>
 
-- Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
-- Various Command-Line Tools
+- Microsoft Azure (Virtual Machines)
+- Microsoft Remote Desktop (Macbook)
+- Various Command-Line Tools (Windows 10)
 - Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
 - Wireshark (Protocol Analyzer)
 
@@ -23,9 +23,9 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Setting up Two Virtual Machines
-- Using Remote Desktop Connection (RDP) to VM-1 and installing Wireshark
-- Using Wireshark and PowerShell to observe Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
+- Setting up two Virtual Machines with Azure
+- Using a Remote Desktop Connection (RDP) for VM-1 and installing Wireshark
+- Implementing Wireshark and PowerShell to observe Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
 
 <h2>Actions and Observations</h2>
 
