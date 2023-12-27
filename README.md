@@ -200,25 +200,38 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 ![Screen Shot 2023-12-26 at 9 24 15 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/719133c4-d9ba-42d6-9ca6-22aff5f039d2)
 
-<h3>&#9316 Observing DHCP Traffic using Wireshark</h3>
+- Rememebr like I said earlier, you can also type in `tcp.port == 22` to filter out SSH traffic
+
+![Screen Shot 2023-12-26 at 9 46 24 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/4aa1e7e0-9021-4ae3-8391-2e99e98473d0)
+
+- Let's go ahead and observe more traffic
+
+<h3>Observing DHCP Traffic using Wireshark</h3>
 
 >_DHCP is a client-server protocol in which servers manage a pool of unique IP addresses, as well as information about client configuration parameters._
 
-- In Wireshark, Type **dhcp**
-- Observe Empty activity
+- In Wireshark, type in "DHCP" at the top so we can start filtering that type of traffic
+- In PowerShell, type `ipconfig /renew`
+- Observe the new DHCP activity
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/45d144f7-39b8-4593-a3d7-da855b956674)
+![Screen Shot 2023-12-26 at 9 55 07 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/c9759ff9-6cc3-4eab-a244-a19302abbad3)
 
-- In PowerShell, type **ipconfig /renew**
-- Wait for Virtual Machine to regain Connection
-- Observe the new DHCP Activity
+<h3>Observing DNS Traffic using Wireshark</h3>
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/9c503a66-99d6-425e-81c6-8070342ce4a6)
-
-<h3>&#9317 Observing DNS Traffic using Wireshark</h3>
-
-- In Wireshark, type **dns** or **udp.port == 53**
+- In Wireshark, type `DNS` or `udp.port == 53`
+- Type in `nslookup www.google.com`
 - Observe the large volume of traffic
+
+![Screen Shot 2023-12-26 at 10 02 00 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/f79a4660-114b-4106-9961-1767f50efd80)
+
+- We can do one more and type in `udp.port == 53` at the top of Wireshark
+- Then `nslookup www.disney.com` in PowerShell
+- Besides the traffic coming in, you can see some of the different IP addresses that Disney also uses
+- Wireshark is able to provide us a breakdown of the packet regarding IP addresses, that it implemented the user datagram protocol, which source port & destination port it used, & etc. 
+
+![Screen Shot 2023-12-26 at 10 07 22 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/8099f01a-f2ed-44b7-af4e-dc5e3e260d20)
+
+
 - Clear the boxes by pressing the `Restart current capture` button (Green Shark fin Icon)
 
 ![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/cb697b04-4ed2-4c3a-ad1e-4ea57462031f)
