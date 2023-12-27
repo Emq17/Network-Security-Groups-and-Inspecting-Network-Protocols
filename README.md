@@ -243,4 +243,10 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 ![Screen Shot 2023-12-26 at 10 19 37 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/68649bf8-4e3c-4214-a69d-d2826094c1ac)
 
-- 
+# Conclusion 
+
+- I recommend going through this lab a couple of times to be able to get a good understanding of how everything works 
+- Try and get to the point where you can implement this naturally
+- The goal is to build more of an intuition of firewalls, NSG's, & maybe even memorize the port numbers listed earlier
+- The more you do it the better you'll understand Azure, Networking, & cloud computing in general
+
