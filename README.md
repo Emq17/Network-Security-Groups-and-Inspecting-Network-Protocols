@@ -231,24 +231,17 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 ![Screen Shot 2023-12-26 at 10 07 22 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/8099f01a-f2ed-44b7-af4e-dc5e3e260d20)
 
-
-- Clear the boxes by pressing the `Restart current capture` button (Green Shark fin Icon)
-
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/cb697b04-4ed2-4c3a-ad1e-4ea57462031f)
-
-- In PowerShell, Type **nslookup ww.google.com**
-- Observe the new DNS traffic in Wireshark
-
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/e632bd41-9ce0-47ba-8c6b-94875c5ce092)
-
-<h3>&#9318 Observing RDP Traffic using Wireshark</h3>
+<h3>Observing RDP Traffic using Wireshark</h3>
 
 >_RDP is a secure, interoperable protocol that creates secure connections between clients, servers and virtual machines._
 
-- In Wireshark, Type **rdp** or **tcp.port == 3389**
+- In Wireshark, type in `RDP` or `tcp.port == 3389`
 - Observe the RDP Activity
+- Remember that we're currently using a live active RDP session to connect with and interact with our physical host computer right now (My Macbook to VM-1)
+- So it only makes sense to why the large amount of traffic is coming through to Wireshark
+- If you observe the actual Source IP coming in, that is most likely our actual IP address while the Destination IP is VM-1's Private IP address
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/c0f48e92-f8a9-4356-a7d4-67a725671318)
+![Screen Shot 2023-12-26 at 10 19 37 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/68649bf8-4e3c-4214-a69d-d2826094c1ac)
 
 ---
 <h1>ALL DONE!! CONGRATS!!!</h1>
