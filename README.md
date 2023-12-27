@@ -6,11 +6,10 @@
 
 In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
 
->**Note***
->_This tutorial uses materials created in the previous demonstration: [Establishing Virtual Machines With Remote Desktop](https://github.com/Emq17/Establishing-Virtual-Machines-With-Remote-Desktop)_
 <h2>Environments and Technologies</h2>
 
-- Microsoft Azure (Virtual Machines)
+- Azure Virtual Machines
+- Azure Network Security Groups (Firewall Resource)
 - Microsoft Remote Desktop (Macbook)
 - Various Command-Line Tools (Windows 10)
 - Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
@@ -21,49 +20,54 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Windows 10 (22H2)
 - Ubuntu Server 20.04 (Linux)
 
-<h2>High-Level Steps</h2>
+<h2>Overview</h2>
 
-- Setting up two Virtual Machines with Azure
-- Using a Remote Desktop Connection (RDP) for VM-1 and installing Wireshark
-- Implementing Wireshark and PowerShell to observe Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
+<p align="center">
+<img src="https://i.imgur.com/mmWW6oj.png" alt="Traffic Examination"/>
+</p>
 
-<h2>Actions and Observations</h2>
+<h2>Step-By-Step Walkthrough</h2>
 
-<h3>&#9312 Create 2 Virtual Machines</h3>
+<h3>Create 2 Virtual Machines</h3>
 
 - Create One Virtual Machine on Microsoft Azure
-    - Set `Resource Group` to **VM1_Group**
-    - Set `Virtual Machine Name` to **VM-1**
-    - Set `Region` to **(US) West US 3**
-    - Set `Image` to **Windows 10 Pro, version 22H2**
-    - Set `Size` to **Standard_E2s_v3 - 2 vcpus, 16 GiB memory**
-    - Set `Username` to **winuser**
-    - Set `Password` to **osticketPassword1
-    - Select `Review + create` until you're Validated
- 
-     ![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/1e7f94f9-d602-408c-817d-6faed271bc85)
+    - Set `Resource Group` to "RG-Lab"
+    - Set `Virtual Machine Name` to "VM-1"
+    - Set `Region` to "(US) West US 3"
+    - Set `Image` to "Windows 10 Pro, version 22H2 - x64 Gen2"
+    - Set `Size` to "Standard_E2s_v3 - 2 vcpus, 16 GiB memory"
+    - Set `Username` to "labuser"
+    - Set `Password` to "Password1234"
+    - Check `Licensing` box
+    - Select `Review + create` then `create` after validation
 
+![Screen Shot 2023-12-26 at 7 05 37 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/deefd5e2-e72d-47c6-aa60-de76e32e5b02)
+
+![Screen Shot 2023-12-26 at 7 10 05 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/49575622-1ebe-48c9-b048-cdc20f4aaf56)
 
 - Create Another Virtual Machine On Microsoft
-     - Set `Resource Group` to **VM1_Group**
-     - Set `Virtual Machine Name` to **VM-2**
-     - Set `Image` to **Ubuntu Server 20.04 LTS**
+     - Set `Resource Group` as the same one in VM-1: "RG-Lab"
+     - Set `Virtual Machine Name` to "VM-2"
+     - Set `Region` to "(US) West US 3"
+     - Set `Image` to "Ubuntu Server 22.04 LTS - x64 Gen2"
+     - Set `Size` to "Standard_E2s_v3 - 2 vcpus, 16 GiB memory"
      - Set `Authentication type` to **Password**
-     - Set `Username` to **linuser**
+     - Set `Username` to "Linux"
      - Select `Next`
- 
-       ![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/13ebcb28-8a94-463a-9d22-edc859614c39)
 
-- Set `Virtual Network` to **VM-1-vnet**
-- Set `Public IP` to **(new) Vm-2-ip**
-- Select `Review + check`
-- Proceed with creating the Virtual Machine
+![Screen Shot 2023-12-26 at 7 18 58 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/74e6eeff-ec5c-4aae-a249-c270c770af77)
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/a0db3cf6-8ff0-4d34-9091-fba65792f1a6)
+![Screen Shot 2023-12-26 at 7 19 51 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/565a2428-75ff-47ad-a337-c054f56a0e03)
+
+- Select `Next : Disks >` & `Next : Networking >`
+- Set `Virtual Network` to "VM-1-vnet"
+- Select `Review + check` then `create` after validation
+
+![Screen Shot 2023-12-26 at 7 23 00 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/7dc8882e-65b8-489a-9c69-1140369738ab)
 
 <h3>&#9313 Installing Wireshark on VM-1</h3>
 
-- Connect to VM-1
+- Remote Desktop Connect to VM-1
 - Open `Microsoft Edge`
 - Type **https://www.wireshark.org/download.html** into the Search Bar
 - Select `Windows Intel Installer`
