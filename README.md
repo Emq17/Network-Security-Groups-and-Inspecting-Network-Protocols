@@ -68,18 +68,19 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h3>&#9313 Installing Wireshark on VM-1</h3>
 
 - Remote Desktop Connect to VM-1
+    - Refer back here if needed: https://github.com/Emq17/Establishing-Virtual-Machines-With-Remote-Desktop
+
+![Screen Shot 2023-12-26 at 7 31 12 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/9340e472-6088-4748-ab38-df1328e962e3)
+
+![Screen Shot 2023-12-26 at 7 32 02 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/90babd41-5e1d-40f1-92df-dd260bc5d344)
+
 - Open `Microsoft Edge`
-- Type **https://www.wireshark.org/download.html** into the Search Bar
-- Select `Windows Intel Installer`
+- Type in "https://www.wireshark.org/download.html" into the Search Bar
+- Select `Windows x64 Installer`
 - Select `Open File` to run the .exe file
+- Install everything with its default settings
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/6fcb0a87-2879-442d-8d29-9780e9d5bdd8)
-
-- The Installation Prompt will appear
-- Select `Next` until you reach start installing
-- Select `Finish`
-
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/dccde23c-29b7-4941-82b6-952293f2d1d8)
+![Screen Shot 2023-12-26 at 7 42 17 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/dd7e70d3-e540-4b8a-a70d-382b276e9ad7)
 
 <h3>&#9314 Observing ICMP Traffic using Wireshark</h3>
 
