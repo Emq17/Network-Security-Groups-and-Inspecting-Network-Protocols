@@ -75,35 +75,42 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 ![Screen Shot 2023-12-26 at 7 32 02 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/90babd41-5e1d-40f1-92df-dd260bc5d344)
 
 - Open `Microsoft Edge`
-- Type in "https://www.wireshark.org/download.html" into the Search Bar
+- Type in wireshark.org/download.html into the Search Bar
 - Select `Windows x64 Installer`
 - Select `Open File` to run the .exe file
 - Install everything with its default settings
 
 ![Screen Shot 2023-12-26 at 7 42 17 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/dd7e70d3-e540-4b8a-a70d-382b276e9ad7)
 
-<h3>&#9314 Observing ICMP Traffic using Wireshark</h3>
+<h3>Observing ICMP Traffic using Wireshark</h3>
 
 >_The Internet Control Message Protocol (ICMP) is a protocol that devices within a network use to communicate problems with data transmission._
 
 - Run `Wireshark`
-- Click the Blue Shark fin icon
+- Click `Ethernet`
+- Click the Blue Shark fin icon at thet top left corner to start capturing packets 
 - Observe the activity constantly going in the background in VM-1
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/4c8c980a-f48a-4b54-b596-1f0a08c2a3f8)
+![Screen Shot 2023-12-26 at 7 47 49 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/30c828c5-172e-4502-9b1c-116a8c59b4c8)
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/e2829eb8-963a-4eaa-af5f-011dd614dc5b)
+- You should see it start to spam traffic just because a lot of things are happening in the background
 
-- Type in **ICMP** and Enter
+![Screen Shot 2023-12-26 at 7 49 26 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/0b4902c8-c6e3-42aa-aa68-8b78e12e85bf)
+
+- Let's start filtering this traffic
+- Type in "ICMP" and Enter
+
+![Screen Shot 2023-12-26 at 7 51 59 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/404360f4-4df1-4736-9091-9aaf8260eb21)
+
 - Observe no activity under the ICMP protocol
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/25cc4df6-8c95-4e76-ba15-86d368756f60)
+![Screen Shot 2023-12-26 at 7 52 50 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/e3f58f81-4aa4-4c6d-a1a4-97ee6ba7c90c)
 
 - Return to the Azure Portal
-- Go to VM-2's OVerview Page
+- Go to VM-2's Overview Page
 - Copy the `Private IP Address` (I'll be using 10.0.0.5)
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/b9ca634f-1003-4577-84a1-b9f9d0ee9e98)
+![Screen Shot 2023-12-26 at 7 54 29 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/a6655fba-a722-4871-bcf3-8efc95eb665f)
 
 - Return to VM-1
 - Open `PowerShell` and Select `Run as Administrator`
