@@ -177,7 +177,7 @@ In this walkthrough, I'll help you observe various network traffic to and from A
 >_SSH or Secure Shell is a network communication protocol that enables two computers to communicate._
 
 - In Wireshark, type "ssh" or "tcp.port == 22"
-- Type in "ssh" + "Linux" + "@Private IP of VM-2"; "ssh Linux@10.0.0.5"
+- Type in "ssh" + "Linux" + "@Private IP of VM-2"; `ssh Linux@10.0.0.5`
 - Now that we're filtering for ssh traffic, observe the empty activity
 
 ![Screen Shot 2023-12-26 at 9 04 05 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/40e0a2d1-f34e-48cc-a1e6-dd57bcaaa693)
