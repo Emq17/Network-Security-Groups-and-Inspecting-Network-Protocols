@@ -252,3 +252,4 @@ In this walkthrough, I'll help you observe various network traffic to and from A
 - The goal is to build more of an intuition of firewalls, NSG's, & maybe even memorize the port numbers listed earlier
 - The more you do it the better you'll understand Azure, Networking, & cloud computing in general
 
+As always, don't forget to delete your resources in order to avoid eating up your subscription and losing money
