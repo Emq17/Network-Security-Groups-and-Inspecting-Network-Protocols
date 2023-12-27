@@ -113,66 +113,92 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 ![Screen Shot 2023-12-26 at 7 54 29 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/a6655fba-a722-4871-bcf3-8efc95eb665f)
 
 - Return to VM-1
-- Open `PowerShell` and Select `Run as Administrator`
-- Type in **ping -t "VM-2 PRIVATE IP Address"**
+- Open `PowerShell` 
+- Type in "ping -t" + "VM-2's PRIVATE IP Address"
 - Observe on Wireshark the results of packets being perpetually sent and received
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/b495a7dc-5685-458b-ad55-4de4b7703c0e)
+![Screen Shot 2023-12-26 at 8 27 52 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/c157ae4a-de35-480e-aebd-211b332ea89e)
+
+- Now type in `ping www.google.com -4` using the ipv4 address
+- You can see how you are sending traffic to Google and we're receiving traffic back
+
+![Screen Shot 2023-12-26 at 8 32 25 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/05b86056-bab9-4df1-8267-7d1ef0ab6dff)
+
+- Lets go ahead and clear our data by clicking this icon below
+
+![Screen Shot 2023-12-26 at 8 39 10 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/722eed68-8e7d-4ee9-9ca5-cf963d335d40)
+
+- Now lets send out a perpetual ping where it should ping forever
+- While this is going on lets go ahead and change the firewall settings on VM-2 to block ICMP traffic from coming through
+- This should help us get a better understanding for how firewalls and networking work 
+
+![Screen Shot 2023-12-26 at 8 41 35 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/629d2321-c475-479c-a46c-b736155accb6)
 
 - Return to the Azure Portal
-- Type **Network Security Groups** into the search bar
+- Type "Network Security Groups" into the search bar
+
+![Screen Shot 2023-12-26 at 8 46 11 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/3a0fc661-78d9-455f-bfeb-232920a5431b)
+
 - Select `VM-2-nsg`
-- Select `Inbound Security Rules`
+- Select `Inbound Security Rules` underneath "settings" on your left
 - Select `Add`
-- Change the Protocol to **icmp**
-- Change the Action to **Deny**
-- Change the Priority to **200**
-- Change the Name to **DENY_ICMP_PING_FROM_ANYWHERE**
+
+![Screen Shot 2023-12-26 at 8 47 15 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/5e917087-5184-4e6e-9117-6a468cb6f91e)
+
+- Change the Protocol to "icmp"
+- Change the Action to "Deny"
+- Change the Priority to "200"
+- Change the Name to "DENY_ICMP_PING_FROM_ANYWHERE"
 - Select `Add`
+
+![Screen Shot 2023-12-26 at 8 53 19 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/559ad656-8947-4317-be5c-2ea0d3fe9390)
+
 - Observe the denial of data packets from Wireshark
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/4f734fc7-d4e8-479c-b43e-dda026c6be6e)
+![Screen Shot 2023-12-26 at 8 55 31 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/a9de0a2d-767b-4e74-81bd-8a537817ce6c)
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/a231860e-9f4a-43b2-824c-bc5393f50310)
+- Return back to VM-2's Inbound security rules
+- Click on the rule we just created
 
-- Return to the Azure Portal
-- Go back into ICMP Security Rule
+![Screen Shot 2023-12-26 at 8 57 43 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/c9e7a310-a758-4034-90f4-67914ee726e1)
+
 - Select `Allow` instead of `Deny`
 - Select `Save`
+
+![Screen Shot 2023-12-26 at 8 58 50 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/da20b774-6b78-43d9-ad5f-cf4053aae6cf)
+
 - Observe the Approval of data packets being sent and received
 - Press `ctrl + c` to stop PowerShell
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/67d4dcc8-a20d-4036-ab12-023024b7be33)
+![Screen Shot 2023-12-26 at 9 00 54 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/0373a23a-7532-46ce-8f65-015663988079)
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/e45cf4b1-b9d8-479e-a08b-dd553183e23c)
-
-<h3>&#9315 Observing SSH Traffic using Wireshark</h3>
+<h3>Observing SSH Traffic using Wireshark</h3>
 
 >_SSH or Secure Shell is a network communication protocol that enables two computers to communicate._
 
-- In Wireshark, type **ssh** or **tcp.port == 22**
-- Observe the empty activity
+- In Wireshark, type "ssh" or "tcp.port == 22"
+- Type in "ssh" + "Linux" + "@Private IP"
+- Now that we're filtering for ssh traffic, observe the empty activity
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/f7516ef6-85cc-45d1-aa40-ddba4d3a3360)
+![Screen Shot 2023-12-26 at 9 04 05 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/40e0a2d1-f34e-48cc-a1e6-dd57bcaaa693)
 
-- In PowerShell, type **ssh linuser@(private ip address)**
-- Type **yes** and enter
-- Type the Password
-  >**Note***
-  >_there is no visual indicator of you typing, but the inputs are being read_
-- Press Enter
-- The commands are now in Linux formant
+- PowerShell should be asking you if you want to continue, type in "yes" then type in the password: Password1234 (There is no visual indicator of you typing, but the inputs are still being read)
+- You should now have a secure connection into VM-2 & are able to run Linux commands
+- As you type in the PowerShell you can see that it goes through the network and traffic automatically comes through to Wireshark
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/233e2d7a-06e0-441f-8999-1dcf5cb1d22a)
+![Screen Shot 2023-12-26 at 9 20 05 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/919ea4ae-638f-4df2-87fc-7406de3fa06a)
 
-![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/e886b7c0-8d42-40a5-926c-18e90d5f088d)
-
-- Type **id** into Powershell
+- Type in `id` into Powershell
 - This will give you the identity group information for VM-2's user
 - Observe the new traffic on Wireshark
-- Type **exit** to close the linked connection
+    - Use `uname -a` and it will tell us about the actual OS it's running on 
+    - Use `pwd` for "print working directory"
+    - Use `ls -lasth` to list out the folders and files in the current directory
+    - Use `touch hi.txt` to make a file named "hi.txt"
+- While you mess around with these commands, because we're using SSH to communicate with VM-2, observe how traffic is being spammed onto Wireshark
+- Type in `exit` to close the linked connection and go back into VM-1's command line
 
-ex![image](https://github.com/CarlosAlvarado0718/Network-Protocols/assets/140138198/683bf38f-7c16-48fb-b00d-c7925cc1d7b9)
+![Screen Shot 2023-12-26 at 9 24 15 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/719133c4-d9ba-42d6-9ca6-22aff5f039d2)
 
 <h3>&#9316 Observing DHCP Traffic using Wireshark</h3>
 
