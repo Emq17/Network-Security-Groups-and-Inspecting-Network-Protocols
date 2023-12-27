@@ -68,7 +68,7 @@ In this walkthrough, I'll help you observe various network traffic to and from A
 <h3>Installing Wireshark on VM-1</h3>
 
 - Remote Desktop Connect to VM-1
-    - Refer back here if needed: github.com/Emq17/Establishing-Virtual-Machines-With-Remote-Desktop
+    - Refer here if needed: https://github.com/Emq17/Establishing-Virtual-Machines-With-Remote-Desktop
 
 ![Screen Shot 2023-12-26 at 7 31 12 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/9340e472-6088-4748-ab38-df1328e962e3)
 
