@@ -238,7 +238,7 @@ In this walkthrough, I'll help you observe various network traffic to and from A
 >_RDP is a secure, interoperable protocol that creates secure connections between clients, servers and virtual machines._
 
 - In Wireshark, type in `RDP` or `tcp.port == 3389`
-- Observe the RDP Activity
+- Observe the RDP activity
 - Remember that we're currently using a live active RDP session to connect with and interact with our physical host computer right now (My Macbook to VM-1)
 - So it only makes sense to why the large amount of traffic is coming through to Wireshark
 - If you observe the actual Source IP coming in, that is most likely our actual IP address while the Destination IP is VM-1's Private IP address
