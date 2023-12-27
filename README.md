@@ -191,18 +191,18 @@ In this walkthrough, I'll help you observe various network traffic to and from A
 ![Screen Shot 2023-12-26 at 9 20 05 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/919ea4ae-638f-4df2-87fc-7406de3fa06a)
 
 - Type in `id` into Powershell
-- This will give you the identity group information for VM-2's user
+    - This will give you the identity group information for VM-2's user
 - Observe the new traffic on Wireshark
     - Use `uname -a` and it will tell us about the actual OS it's running on 
     - Use `pwd` for "print working directory"
     - Use `ls -lasth` to list out the folders and files in the current directory
     - Use `touch hi.txt` to make a file named "hi.txt"
 - While you mess around with these commands, because we're using SSH to communicate with VM-2, observe how traffic is being spammed onto Wireshark
-- Type in `exit` to close the linked connection and go back into VM-1's command line
+    - Use `exit` to close the linked connection and go back into VM-1's command line
 
 ![Screen Shot 2023-12-26 at 9 24 15 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/719133c4-d9ba-42d6-9ca6-22aff5f039d2)
 
-- Rememebr like I said earlier, you can also type in `tcp.port == 22` to filter out SSH traffic
+- Remember. you can also type in `tcp.port == 22` to filter out SSH traffic
 
 ![Screen Shot 2023-12-26 at 9 46 24 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/4aa1e7e0-9021-4ae3-8391-2e99e98473d0)
 
