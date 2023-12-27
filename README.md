@@ -153,21 +153,21 @@ In this walkthrough, I'll help you observe various network traffic to and from A
 
 ![Screen Shot 2023-12-26 at 8 53 19 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/559ad656-8947-4317-be5c-2ea0d3fe9390)
 
-- Observe the denial of data packets from Wireshark
+- Observe the request timing out and the denial of data packets from Wireshark 
 
 ![Screen Shot 2023-12-26 at 8 55 31 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/a9de0a2d-767b-4e74-81bd-8a537817ce6c)
 
-- Return back to VM-2's Inbound security rules
+- Now for fun, return back to VM-2's Inbound security rules
 - Click on the rule we just created
 
 ![Screen Shot 2023-12-26 at 8 57 43 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/c9e7a310-a758-4034-90f4-67914ee726e1)
 
-- Select `Allow` instead of `Deny`
-- Select `Save`
+- Change it back to how it was by selecting `Allow` instead of `Deny`
+- Hit `Save`
 
 ![Screen Shot 2023-12-26 at 8 58 50 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/da20b774-6b78-43d9-ad5f-cf4053aae6cf)
 
-- Observe the Approval of data packets being sent and received
+- Now you can see the traffic coming in again and observe the approval of data packets being sent/received
 - Press `ctrl + c` to stop PowerShell
 
 ![Screen Shot 2023-12-26 at 9 00 54 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/0373a23a-7532-46ce-8f65-015663988079)
