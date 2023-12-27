@@ -226,7 +226,7 @@ In this walkthrough, I'll help you observe various network traffic to and from A
 
 ![Screen Shot 2023-12-26 at 10 02 00 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/f79a4660-114b-4106-9961-1767f50efd80)
 
-- We can do one more and type in `udp.port == 53` at the top of Wireshark
+- Type in `udp.port == 53` at the top of Wireshark
 - Then `nslookup www.disney.com` in PowerShell
 - Besides the traffic coming in, you can see some of the different IP addresses that Disney also uses
 - Wireshark is able to provide us a breakdown of the packet regarding IP addresses, that it implemented the user datagram protocol, which source port & destination port it used, & etc. 
