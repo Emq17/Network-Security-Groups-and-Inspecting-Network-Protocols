@@ -75,7 +75,7 @@ In this walkthrough, I'll help you observe various network traffic to and from A
 ![Screen Shot 2023-12-26 at 7 32 02 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/90babd41-5e1d-40f1-92df-dd260bc5d344)
 
 - Open `Microsoft Edge`
-- Type in wireshark.org/download.html into the Search Bar
+- Type in https://wireshark.org/download.html into the Search Bar
 - Select `Windows x64 Installer`
 - Select `Open File` to run the .exe file
 - Install everything with its default settings
