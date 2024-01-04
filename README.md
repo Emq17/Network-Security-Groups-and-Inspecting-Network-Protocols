@@ -130,7 +130,7 @@ In this walkthrough, I'll help you observe various network traffic to and from A
 
 - Now lets send out a perpetual ping where it should ping forever
 - While this is going on lets go ahead and change the firewall settings on VM-2 to block ICMP traffic from coming through
-- This should help us get a better understanding for how firewalls and networking work 
+- This should help us get a better understanding for how firewalls and networking works
 
 ![Screen Shot 2023-12-26 at 8 41 35 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/629d2321-c475-479c-a46c-b736155accb6)
 
