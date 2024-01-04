@@ -147,7 +147,7 @@ In this walkthrough, I'll help you observe various network traffic to and from A
 
 - Change the Protocol to "icmp"
 - Change the Action to "Deny"
-- Change the Priority to "200"
+- Change the Priority to "200" to prioritize this action 
 - Change the Name to "DENY_ICMP_PING_FROM_ANYWHERE"
 - Select `Add`
 
