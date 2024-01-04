@@ -45,7 +45,7 @@ In this walkthrough, I'll help you observe various network traffic to and from A
 
 ![Screen Shot 2023-12-26 at 7 10 05 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/49575622-1ebe-48c9-b048-cdc20f4aaf56)
 
-- Create Another Virtual Machine On Microsoft
+- Create Another Virtual Machine
      - Set `Resource Group` as the same one in VM-1: "RG-Lab"
      - Set `Virtual Machine Name` to "VM-2"
      - Set `Region` to "(US) West US 3"
