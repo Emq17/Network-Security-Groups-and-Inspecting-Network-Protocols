@@ -178,9 +178,6 @@ In this walkthrough, I'll help you observe various network traffic to and from A
 
 - In Wireshark, type "ssh" or "tcp.port == 22"
 - Type in "ssh" + "Linux" + "@Private IP of VM-2"; `ssh Linux@10.0.0.5`
-
-![Screen Shot 2023-12-26 at 9 04 05 PM](https://github.com/Emq17/Network-Security-Groups-and-Inspecting-Network-Protocols/assets/147126755/40e0a2d1-f34e-48cc-a1e6-dd57bcaaa693)
-
 - PowerShell should be asking you if you want to continue.
     - Type in "yes" and the password "Password1234"
     - There is no visual indicator of you typing, but the inputs are still being read
