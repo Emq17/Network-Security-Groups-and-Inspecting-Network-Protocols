@@ -12,7 +12,7 @@ In this walkthrough, I'll help you observe various network traffic to and from A
 - Azure Network Security Groups (Firewall Resource)
 - Microsoft Remote Desktop (Macbook)
 - Various Command-Line Tools (Windows 10)
-- Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
+- Various Network Protocols (SSH, RDP, DNS, HTTP/S, ICMP)
 - Wireshark (Protocol Analyzer)
 
 <h2>Operating Systems</h2>
